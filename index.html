@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
+    <link href="style.css" rel="stylesheet">
+    <meta charset="utf-8">
+
+	<title>TASLP-DEMO</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1091.0" data-gr-ext-installed="">
+
+
+<div class="container" >
+<header role="banner">
+</header>
+<main role="main">
+<article itemscope itemtype="https://schema.org/BlogPosting">
+
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+    <div class="column has-text-centered">
+    <h3 class="title is-2 publication-title"> <b>Zero-shot Multi-Lingual and Multi-Speaker TTS</b></h3>
+    </div>
+    <br>
+    <div class="is-size-5">
+        <span class="author-block">
+          <h4 style="text-align: center;"><b>Authors: </b>Cheng Gong, Xin Wang, Erica Cooper, Dan Wells, <br> Longbiao Wang, Jianwu Dang, Korin Richmond, Junichi Yamagishi</h4>
+	   	
+    </div>
+
+    <div class="is-size-5 publication-authors">
+        <span class="author-block"><h4 style="text-align: center;"><b style="color:#d76100; font-weight:normal">&#x25B6 </b>College of Intelligence and Computing, Tianjin University, China </h4></span>
+	<span class="author-block"><h4 style="text-align: center;"><b style="color:#ADD8E6; font-weight:normal">&#x25B6 </b>National Institute of Informatics, Japan</h4></span>  
+	<span class="author-block"><h4 style="text-align: center;"><b style="color:#00FF00; font-weight:normal">&#x25B6 </b>Centre for Speech Technology Research, University of Edinburgh, United Kingdom</h4></span> 
+    </div>
+
+
+    <div class="column has-text-centered">
+
+        <span class="link-block">
+            <a href="http://arxiv.org/abs/2312.14398" target="_blank"
+            class="external-link button is-normal is-rounded is-dark">
+            <span class="icon">
+                <i class="ai ai-arxiv"></i>
+            </span>
+            <span>Paper</span>
+            </a>
+        </span>
+        
+        <span class="link-block">
+            <a href="https://github.com/nii-yamagishilab/ZMM-TTS" target="_blank"
+            class="external-link button is-normal is-rounded is-dark">
+            <span class="icon">
+                <i class="fab fa-github"></i>
+            </span>
+            <span>Code</span>
+            </a>
+        </span>
+
+    </div>
+</div>
+
+
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+   <!-- 
+   <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths">
+          <h2 class="title is-3">Overview</h2>
+        </div>
+    </div>
+    
+    <div class="text-center">
+        <img id="teaser" width="90%" src="images/abstract.png">     
+    </div>	
+     -->	
+    <div class="text-center">
+        <img id="teaser" width="90%" src="images/fig1_1105.png">     
+    </div>
+</div>	
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+    <h3>Seen speaker results:</h3>
+     <h4>Input Text</h4>
+  <ul>
+    <li><strong>English:</strong>a stooped old lady with a mottled face a hooked nose and a hard gray eye mrs pipchin took little children to board and her idea of managing them</li>
+    <li><strong>French:</strong>Le concept d'emploi budgétaire est utilisé lors de la négociation entre le ministère du budget et le ministre chargé de l'enseignement supérieur</li>
+    <li><strong>German:</strong>der Oberste Sowjet hatte es mehrheitlich abgelehnt das geltende Gesetz über ein Referendum mit den Beschlüssen des Kongresses in Einklang zu bringen</li>
+    <li><strong>Portuguese:</strong>os presidentes se reuniram na cidade de Latakia na Síria mas nenhum dos dois se pronunciou sobre a vitória de Netanyahu</li>
+    <li><strong>Spanish:</strong>Los vendedores ofrecen cada vez más ambas drogas lo que ha hecho la heroína tan disponible como el crack también llamado piedra</li>
+    <li><strong>Swedish:</strong>Vi har svårt att påverka investeringsviljan direkt men genom att exempelvis erbjuda olika finansieringsalternativ kan vi positivt påverka kundens likviditetsbehov</li>
+ </ul>
+	
+		<div class="table-responsive pt-3">
+			<table class="table table-hover pt-2">
+			<thead>
+			<tr>
+            <th style="text-align: center">Method</th>
+            <th style="text-align: center">English</th>
+            <th style="text-align: center">French</th>
+            <th style="text-align: center">German</th>
+            <th style="text-align: center">Portuguese</th>
+	    <th style="text-align: center">Spanish</th>
+	     <th style="text-align: center">Swedish</th>
+			</tr>
+			</thead>
+			<tbody>
+	
+            <tr>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><b>FSM1C</b></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/00_English.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/00_French.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/00_German.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/00_Portuguese.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/00_Spanish.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/00_Swedish.wav" autoplay/>Your browser does not support the audio element.</audio></td>		
+            </tr>
+             <tr>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><b>FSM2C</b></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/01_English.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/01_French.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/01_German.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/01_Portuguese.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/01_Spanish.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/01_Swedish.wav" autoplay/>Your browser does not support the audio element.</audio></td>		
+            </tr>
+             <tr>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><b>ZMM-TTS1C</b></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/02_English.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/02_French.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/02_German.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/02_Portuguese.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/02_Spanish.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/02_Swedish.wav" autoplay/>Your browser does not support the audio element.</audio></td>		
+            </tr>
+
+	     <tr>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><b>ZMM-TTS2C</b></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/03_English.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/03_French.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/03_German.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/03_Portuguese.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/03_Spanish.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/03_Swedish.wav" autoplay/>Your browser does not support the audio element.</audio></td>		
+            </tr>
+
+	     <tr>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><b>FSM1X</b></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/04_English.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/04_French.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/04_German.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/04_Portuguese.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/04_Spanish.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/04_Swedish.wav" autoplay/>Your browser does not support the audio element.</audio></td>		
+            </tr>
+             <tr>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><b>FSM2X</b></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/05_English.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/05_French.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/05_German.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/05_Portuguese.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/05_Spanish.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/05_Swedish.wav" autoplay/>Your browser does not support the audio element.</audio></td>		
+            </tr>
+             <tr>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><b>ZMM-TTS1X</b></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/06_English.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/06_French.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/06_German.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/06_Portuguese.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/06_Spanish.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/06_Swedish.wav" autoplay/>Your browser does not support the audio element.</audio></td>		
+            </tr>
+
+	     <tr>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><b>ZMM-TTS2X</b></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/07_English.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/07_French.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/07_German.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/07_Portuguese.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/07_Spanish.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/07_Swedish.wav" autoplay/>Your browser does not support the audio element.</audio></td>		
+            </tr>
+
+	     <tr>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><b>YourTTS</b></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/08_English.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/08_French.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/08_German.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/08_Portuguese.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/08_Spanish.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/08_Swedish.wav" autoplay/>Your browser does not support the audio element.</audio></td>		
+            </tr>
+
+	    <tr>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><b>GT</b></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/09_English.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/09_French.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/09_German.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/09_Portuguese.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/09_Spanish.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="SeenAudios/09_Swedish.wav" autoplay/>Your browser does not support the audio element.</audio></td>		
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+	<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+    <h3>Unseen speaker results:</h3>
+     <h4>Input Text</h4>
+  <ul>
+    <li><strong>English:</strong>he lifted his head with a jerk and swung the quail away from the heat leaving it still suspended and taking his rifle from its pegs stood for a moment in his door listening</li>
+    <li><strong>French:</strong>Au niveau national le premier délégué assume toutes les responsabilités pour ce qui concerne le concours national de mémoires</li>
+    <li><strong>German:</strong>du starker tod dein schweigen machet graun hast du uns nur die totengruft zu bieten sollt nicht der geist die jakobsleiter schaun und fortbestehn nur in den</li>
+    <li><strong>Portuguese:</strong>essa atitude já mudou o Alca é uma prioridade de Washington enquadrada na moldura da estratégia de de incentivo das exportações americanas</li>
+    <li><strong>Spanish:</strong>La primera reunión entre negociadores palestinos y judíos se efectuará el domingo en la frontera entre Israel y Gaza con la participación del mediador norteamericano Dennis Ross</li>
+    <li><strong>Swedish:</strong>flera beväpnade protester i Shimba tidigare slagits ner av Mobutus trupper</li>
+ </ul>
+	
+		<div class="table-responsive pt-3">
+			<table class="table table-hover pt-2">
+			<thead>
+			<tr>
+            <th style="text-align: center">Method</th>
+            <th style="text-align: center">English</th>
+            <th style="text-align: center">French</th>
+            <th style="text-align: center">German</th>
+            <th style="text-align: center">Portuguese</th>
+	    <th style="text-align: center">Spanish</th>
+	     <th style="text-align: center">Swedish</th>
+			</tr>
+			</thead>
+			<tbody>
+	
+            <tr>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><b>FSM1C</b></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/00_English.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/00_French.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/00_German.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/00_Portuguese.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/00_Spanish.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/00_Swedish.wav" autoplay/>Your browser does not support the audio element.</audio></td>		
+            </tr>
+             <tr>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><b>FSM2C</b></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/01_English.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/01_French.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/01_German.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/01_Portuguese.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/01_Spanish.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/01_Swedish.wav" autoplay/>Your browser does not support the audio element.</audio></td>		
+            </tr>
+             <tr>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><b>ZMM-TTS1C</b></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/02_English.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/02_French.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/02_German.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/02_Portuguese.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/02_Spanish.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/02_Swedish.wav" autoplay/>Your browser does not support the audio element.</audio></td>		
+            </tr>
+
+	     <tr>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><b>ZMM-TTS2C</b></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/03_English.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/03_French.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/03_German.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/03_Portuguese.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/03_Spanish.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/03_Swedish.wav" autoplay/>Your browser does not support the audio element.</audio></td>		
+            </tr>
+
+	     <tr>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><b>FSM1X</b></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/04_English.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/04_French.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/04_German.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/04_Portuguese.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/04_Spanish.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/04_Swedish.wav" autoplay/>Your browser does not support the audio element.</audio></td>		
+            </tr>
+             <tr>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><b>FSM2X</b></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/05_English.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/05_French.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/05_German.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/05_Portuguese.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/05_Spanish.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/05_Swedish.wav" autoplay/>Your browser does not support the audio element.</audio></td>		
+            </tr>
+             <tr>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><b>ZMM-TTS1X</b></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/06_English.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/06_French.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/06_German.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/06_Portuguese.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/06_Spanish.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/06_Swedish.wav" autoplay/>Your browser does not support the audio element.</audio></td>		
+            </tr>
+
+	     <tr>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><b>ZMM-TTS2X</b></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/07_English.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/07_French.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/07_German.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/07_Portuguese.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/07_Spanish.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/07_Swedish.wav" autoplay/>Your browser does not support the audio element.</audio></td>		
+            </tr>
+
+	     <tr>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><b>YourTTS</b></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/08_English.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/08_French.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/08_German.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/08_Portuguese.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/08_Spanish.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/08_Swedish.wav" autoplay/>Your browser does not support the audio element.</audio></td>		
+            </tr>
+
+	    <tr>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><b>GT</b></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/09_English.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/09_French.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/09_German.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/09_Portuguese.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/09_Spanish.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 120px;"><source src="UnseenAudios/09_Swedish.wav" autoplay/>Your browser does not support the audio element.</audio></td>		
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+     <h3>Low-resources results:</h3>
+     <ul>
+     <li> <a href="https://gongchenghhu.github.io/Italian-demo/"><strong>Italian</strong></a></li>
+     <li> <a href="https://gongchenghhu.github.io/Polish-demo/"><strong>Polish</strong></a></li>
+      <li> <a href="https://gongchenghhu.github.io/supplementary-results/"><strong>Librispeech</strong></a></li>
+    <li><strong>More other languages (in progress)</strong></li>
+ </ul>
+</div>
